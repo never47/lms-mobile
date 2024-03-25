@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:lms_mobile/tabs.dart';
+
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
   seedColor: const Color.fromARGB(255, 102, 6, 247),
@@ -35,7 +37,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme,
-      home: const Text('LETS FUCKING DO IT'),
+      home: const Tabs(),
     );
   }
 }
