@@ -10,15 +10,15 @@ class NetworkManager {
       headers: {"Accept": "application/json"},
       followRedirects: false,
     );
-    _dio = Dio(options)..interceptors.add(CookieManager(cookieJar));
+    _dio = Dio(options)..interceptors.add(CookieManager(CookieJar()));
   }
 
   late Dio _dio;
-  final CookieJar cookieJar = CookieJar();
+  final CookieJar cookieJar = CookieJar(ignoreExpires: true);
 
   Future<Response> login(Map<String, Object> data) async {
     Response respone = await _dio.post(Api.session, data: data);
-    print(respone.headers);
+    print(respone.headers['set-cookie']);
     return respone;
   }
 
@@ -32,11 +32,7 @@ class NetworkManager {
     print("_____________________________________________________");
 
     print(cookies);
-    List<Cookie> cookiess =
-        await cookieJar.loadForRequest(Uri.dataFromString(Api.session));
-    for (var cookie in cookiess) {
-      print("${cookie.name}: ${cookie.value}");
-    }
+
     print("_____________________________________________________");
     // Выводим информацию о куках
     cookies.forEach((cookie) {

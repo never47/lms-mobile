@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lms_mobile/screens/profile.dart';
+import 'package:lms_mobile/screens/student_card.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key});
@@ -70,7 +71,13 @@ class MainDrawer extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,
                   ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (ctx) => const StudentCard(),
+                ),
+              );
+            },
           ),
           ListTile(
             leading: Icon(

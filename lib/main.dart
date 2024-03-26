@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
-import 'package:lms_mobile/tabs.dart';
+import 'package:lms_mobile/screens/login.dart';
 
+/*
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
-  seedColor: const Color.fromARGB(255, 102, 6, 247),
+  seedColor: const Color.fromARGB(255, 31, 125, 208),
   background: const Color.fromARGB(255, 56, 49, 66),
 );
 
@@ -25,7 +26,7 @@ final theme = ThemeData().copyWith(
     ),
   ),
 );
-
+*/
 void main() {
   runApp(const App());
 }
@@ -36,8 +37,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: theme,
-      home: const Tabs(),
+      theme: ThemeData.dark(),
+      home: LoginScreen(),
     );
   }
 }
