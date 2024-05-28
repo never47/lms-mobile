@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
         title: const Text('TSU'),
       ),
       drawer: const MainDrawer(),
-      body: Text(UserSession().userName),
+      body: Text("sad"),
     );
   }
 }

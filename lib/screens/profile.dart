@@ -6,7 +6,7 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My University Profile'),
+        title: const Text('My University Profile'),
       ),
       drawer: const MainDrawer(),
       body: const Padding(

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:dio/dio.dart';
-
 import 'package:lms_mobile/screens/homepage.dart';
-import 'package:lms_mobile/constants/user_session.dart';
 import 'package:lms_mobile/tools/network_manager.dart';
 import 'package:lms_mobile/widgets/errorbar.dart';
+
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,8 +31,9 @@ class _LoginScreenState extends State<LoginScreen> {
       };
 
       try {
-        Response response = await NetworkManager().login(data);
-
+        http.Response response = await NetworkManager().login(data);
+        print("sd");
+        /*
         if (response.statusCode != 200) {
           throw Exception('Something went wrong...');
         } else if (response.data['student'] == null) {
@@ -43,14 +43,16 @@ class _LoginScreenState extends State<LoginScreen> {
         var cookies = response.headers.map['set-cookie'];
 
         if (cookies != null) {
+          //print(cookies);
+          //print(response.data['username']);
           UserSession().setUser('blyat', response.data['username']);
         }
-
+  */
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (ctx) => HomePage(
-              name: response.data['username'],
+              name: "asd",
             ),
           ),
         );

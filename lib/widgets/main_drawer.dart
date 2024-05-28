@@ -24,12 +24,6 @@ class MainDrawer extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const Icon(
-                  Icons.build,
-                  size: 48,
-                  color: Colors.white70,
-                ),
-                const SizedBox(width: 20),
                 Text(
                   'Tbili State University',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(

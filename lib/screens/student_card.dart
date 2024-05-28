@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:dio/dio.dart';
+
+import 'package:lms_mobile/widgets/main_drawer.dart';
 
 import 'package:lms_mobile/tools/network_manager.dart';
-import 'package:lms_mobile/widgets/main_drawer.dart';
+import 'package:http/http.dart' as http;
 
 class StudentCard extends StatefulWidget {
   const StudentCard({super.key});
@@ -12,9 +13,10 @@ class StudentCard extends StatefulWidget {
 }
 
 void onClick() async {
-  Response response = await NetworkManager().getStudentCard();
-  print(response.statusCode);
-  print(response.data);
+  http.Response response = await NetworkManager().getStudentCard();
+  print(response.headers);
+  print(response.body);
+  // print(response.statusCode);
 }
 
 class _StudentCard extends State<StudentCard> {
